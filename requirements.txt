@@ -1,2 +1,5 @@
-fastapi
-uvicorn[standard]
+dash
+flask
+pandas
+seaborn
+matplotlib
