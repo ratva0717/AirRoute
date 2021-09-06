@@ -1,4 +1,4 @@
-# AirRoute
+# AirRoute Prediction and landing assistant
 
 # Set up the environment by installing all dependencies 
 
