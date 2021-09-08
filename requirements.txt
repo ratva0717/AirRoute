@@ -2,4 +2,5 @@ dash
 flask
 pandas
 seaborn
+sklearn
 matplotlib
