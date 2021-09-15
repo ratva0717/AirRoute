@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>AIR PLANE ROUTE AND LANDING ASSISTANT</title>
-<!--
-DREAM PULSE
-https://templatemo.com/tm-536-dream-pulse
--->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="static/css/all.min.css" />
     <link rel="stylesheet" href="static/css/bootstrap.min.css" />
@@ -26,9 +22,6 @@ https://templatemo.com/tm-536-dream-pulse
     <div class="container-fluid">
       <div class="row">        
           <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
-            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
             <div class="tm-sidebar-sticky">
               <div class="tm-brand-box">
                 <div class="tm-double-border-1">
@@ -37,28 +30,27 @@ https://templatemo.com/tm-536-dream-pulse
                   </div>
                 </div>
               </div>
-
-              <ul id="tmMainNav" class="nav flex-column text-uppercase text-right tm-main-nav">
+                <ul class="nav flex-column text-uppercase text-right tm-main-nav">
                 <li class="nav-item">
-                  <a href="#eda" class="nav-link active" >
-                    <span class="d-inline-block mr-3">EDA on Route and Weather data</span>
-                    <span class="d-inline-block tm-white-rect"></span>
+                    <a href="{{ url_for('eda') }}" >
+                    <span class="nav flex-column text-uppercase text-right tm-main-nav d-inline-block mr-3">EDA on Route and Weather data</span>
+                 <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#about" class="nav-link">
+                  <a href="{{ url_for('classify') }}" class="nav-link">
                     <span class="d-inline-block mr-3">Route Classifier V0(Version 0)</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#work" class="nav-link">
+                  <a href="{{ url_for('ts') }}" class="nav-link">
                     <span class="d-inline-block mr-3">Route Classifier V1(Version 1)</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#clients" class="nav-link">
+                  <a href="{{ url_for('landing') }}" class="nav-link">
                     <span class="d-inline-block mr-3">Landing Assistant</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
@@ -69,8 +61,7 @@ https://templatemo.com/tm-536-dream-pulse
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
-              </ul>
-       
+                </ul>
               <footer class="text-center text-white small">
               </footer>
             </div>
@@ -80,7 +71,7 @@ https://templatemo.com/tm-536-dream-pulse
             <div
               class="parallax-window"
               data-parallax="scroll"
-              data-image-src="static/img/dream-pulse-header.jpg">
+              data-image-src="static/img/network.png">
               <div class="tm-section-wrap">
                 <section id="intro" class="tm-section">
                     <div class="tm-bg-white-transparent tm-intro">
@@ -97,304 +88,92 @@ https://templatemo.com/tm-536-dream-pulse
                 </section>
             </div>            
           </div>
-              <div class="tm-section-wrap bg-white">
-            <section id="eda" class="row tm-section">
-                <div class="w-100 tm-double-border-1 tm-border-gray">
-                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
-                      <div class="tm-gallery-wrap">
-                          <h2 class="tm-color-primary tm-section-title mb-4 ml-2">WEATHER PATTERNS</h2>
-                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                         <!-- Indicators -->
-     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-         <li data-target="#myCarousel" data-slide-to="2"></li>
-         <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="data:image/png;base64,{{ws_url}}" alt="Chart" height="100%" width="100%">
-      </div>
-
-      <div class="item">
-         <img src="data:image/png;base64,{{tmp_url}}" alt="Chart" height="100%" width="100%">
-      </div>
-        <div class="item">
-         <img src="data:image/png;base64,{{h_url}}" alt="Chart" height="100%" width="100%">
-      </div>
-        <div class="item">
-         <img src="data:image/png;base64,{{p_url}}" alt="Chart" height="100%" width="100%">
-      </div>
-    </div>
-  </div>
- </div>
-   </div>
-  </div>
-  </section>
-    </div>
           <div class="tm-section-wrap bg-white">
-            <section id="about" class="row tm-section">
-              <div class="col-xl-6">
-                   <div class="tm-section-half">
-                    <h2 class="tm-section-title tm-color-primary mb-5">SVM CLASSIFIER</h2>
-                    <p class="mb-5">
-                    </p>
-
-              </div>
-              <div class="col-xl-6">
-                <div class="tm-section-half">
-                    <h2 class="tm-section-title tm-color-primary mb-5">Company Profile</h2>
-
-                </div>
-              </div>
-                  </div>
-            </section>
-          </div>
-
-          <div class="tm-section-wrap bg-white">
-            <section id="work" class="row tm-section">
-              <div class="col-12">
-                <div class="w-100 tm-double-border-1 tm-border-gray">
-                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
-                      <div class="tm-gallery-wrap">
-                          <h2 class="tm-color-primary tm-section-title mb-4 ml-2">Our Work</h2>
-                          <div class="tm-gallery">
-                            <div class="tm-gallery-item">                        
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/01.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/01.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/02.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/02.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/03.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/03.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/04.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/04.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/05.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/05.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/06.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/06.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/07.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/07.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                            <div class="tm-gallery-item">
-                              <figure class="effect-bubba">
-                                <img src="static/img/gallery/08.jpg" alt="Our Work Image" class="img-fluid">
-                                <figcaption>
-                                  <h2>Fresh <span>Bubba</span></h2>
-                                  <p>Bubba likes to appear out of thin air.</p>
-                                  <a href="static/img/gallery/large/08.jpg">View more</a>
-                                </figcaption>
-                              </figure>
-                            </div>
-                          </div>
-                      </div>                        
-                    </div>                  
-                  </div>     
-              </div>         
-            </section>
-          </div>
-            
-          <div class="tm-section-wrap bg-white">
-            <section id="clients" class="row tm-section">
-              <div class="col-12 tm-section-pad">
-                  <div class="tm-flex-item-left">
-                      <div class="tm-w-80">
-                          <h2 class="tm-color-primary tm-section-title mb-4">Our Clients</h2>
-                          <p class="mb-5">
-                            Aenean est augue, iaculis ut arcu a, cursus tempus eros.
-                            Maecenas ut efficitur lectus, vel commodo nibh. Vivamus
-                            consequat massa non euismod facilisis. Morbi assumsan non libero
-                            a vehicula. Donec blandit suscipit magna sit amet elementum.
-                          </p>
-                      </div>
-
-                      <div class="row tm-clients-images">
-                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                          <a href="https://google.com">
-                            <img src="static/img/client-1.png" alt="Client Image" class="img-fluid tm-client-img" />
-                          </a>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                          <a href="https://facebook.com">
-                            <img src="static/img/client-2.png" alt="Client Image" class="img-fluid tm-client-img" />
-                          </a>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                          <a href="https://twitter.com">
-                            <img src="static/img/client-3.png" alt="Client Image" class="img-fluid tm-client-img" />
-                          </a>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                          <a href="https://instagram.com">
-                            <img src="static/img/client-4.png" alt="Client Image" class="img-fluid tm-client-img" />
-                          </a>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                            <a href="https://google.com">
-                              <img src="static/img/client-5.png" alt="Client Image" class="img-fluid tm-client-img" />
-                            </a>
-                          </div>
-                          <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                            <a href="https://facebook.com">
-                              <img src="static/img/client-6.png" alt="Client Image" class="img-fluid tm-client-img" />
-                            </a>
-                          </div>
-                          <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                            <a href="https://twitter.com">
-                              <img src="static/img/client-7.png" alt="Client Image" class="img-fluid tm-client-img" />
-                            </a>
-                          </div>
-                          <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 tm-img-wrap">
-                            <a href="https://instagram.com">
-                              <img src="static/img/client-8.png" alt="Client Image" class="img-fluid tm-client-img" />
-                            </a>
-                          </div>
-                      </div>
-                  </div>
-              </div>                             
-            </section>
-          </div>
-            <div class="tm-section-wrap bg-white">
             <section id="talk" class="row tm-section">
               <div class="col-12 tm-section-pad">
                   <div class="tm-flex-item-left">
                       <div class="tm-w-80">
-                          <h2 class="tm-color-primary tm-section-title mb-4">PERFORMANCE BOARD</h2>
-  <div class="row">
-  <div class="column">
- <div class="mb-5">
-    <div class="card" >
-   <div class="wrapper container">
-  <div class="c100 p94 blue">
-      <span>{{ SVM_Accuracy }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
- <div class="c100 p73 orange">
-      <span>{{ SVM_Precision }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
-  <div class="c100 p56 green">
-      <span>{{ SVM_Recall }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
-</div>
-  <div class="container">
-    <h4><b>SVM CLASSIFIER</b></h4>
-         <div class = "foo b"></div>
-      <div >Accuracy</div>
-      <div class = "foo o"></div>
-         <div >Precision</div>
-      <div class = "foo g"></div>
-         <div >Recall</div>
-</div>
- </div>
-  </div>
-  </div>
-      <div class="column">
- <div class="mb-5">
-    <div class="card" >
-   <div class="wrapper container">
-  <div class="c100 p94 blue">
-      <span>{{ NB_Accuracy }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
- <div class="c100 p63 orange">
-      <span>{{ NB_Precision }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
-  <div class="c100 p94 green">
-      <span>{{ NB_Recall }}%</span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
-</div>
-  <div class="container">
-    <h4><b>NAIVE BAYES CLASSIFIER</b></h4>
-  </div>
-</div>
- </div>
- </div>
- </div>
- </div>
-   </div>
-    </div>
-   </section>
-          </div>
-        </main>
-      </div>
-    </div>
+                        <h2 class="tm-color-primary tm-section-title mb-4">PERFORMANCE BOARD</h2>
+                          <div class="row">
+                            <div class="column">
+                              <div class="mb-5">
+                              <div class="card" >
+                              <div class="wrapper container">
+                              <div class="c100 p94 blue">
+                                <span>{{ SVM_Accuracy }}%</span>
+                                <div class="slice">
+                                  <div class="bar"></div>
+                                  <div class="fill"></div>
+                                </div>
+                            </div>
+                            <div class="c100 p73 orange">
+                                  <span>{{ SVM_Precision }}%</span>
+                                  <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                  </div>
+                              </div>
+                            <div class="c100 p56 green">
+                                <span>{{ SVM_Recall }}%</span>
+                                <div class="slice">
+                                  <div class="bar"></div>
+                                  <div class="fill"></div>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="container">
+                          <h4><b>SVM CLASSIFIER</b></h4>
+                              <div class = "foo b"></div>
+                            <div >Accuracy</div>
+                            <div class = "foo o"></div>
+                              <div >Precision</div>
+                            <div class = "foo g"></div>
+                              <div >Recall</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="column">
+                    <div class="mb-5">
+                      <div class="card" >
+                        <div class="wrapper container">
+                          <div class="c100 p94 blue">
+                            <span>{{ NB_Accuracy }}%</span>
+                            <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                            </div>
+                          </div>
+                          <div class="c100 p63 orange">
+                            <span>{{ NB_Precision }}%</span>
+                            <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                          </div>
+                        </div>
+                        <div class="c100 p94 green">
+                            <span>{{ NB_Recall }}%</span>
+                            <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                            </div>
+                        </div>
+                      </div>
+                    <div class="container">
+                      <h4><b>NAIVE BAYES CLASSIFIER</b></h4>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+                </div>
+              </section>
+                      </div>
+                    </main>
+                  </div>
+                </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.min.js"></script>
@@ -403,5 +182,14 @@ https://templatemo.com/tm-536-dream-pulse
     <script src="static/slick/slick.min.js"></script>
     <script src="static/js/jquery.magnific-popup.min.js"></script>
     <script src="static/js/templatemo-scripts.js"></script>
+  <script>
+    $(document).ready(function(){
+        $(".slide-toggle").click(function(){
+            $(".box").animate({
+                width: "toggle"
+            });
+        });
+    });
+</script>
   </body>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EDA ON WEATHER PARAMETERS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="static/css/all.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/slick/slick.css"/>
+    <link rel="stylesheet" href="static/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
+    <link rel="stylesheet" href="static/css/circle.css" />
+    <link rel="stylesheet" href="static/css/card.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-sidebar-sticky">
+              <div class="tm-brand-box">
+                <div class="tm-double-border-1">
+                  <div class="tm-double-border-2">
+                    <h1 class="tm-brand text-uppercase">SPARTANZ CRUSE</h1>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="nav flex-column text-uppercase text-right tm-main-nav">
+                <li class="nav-item">
+                  <a href="{{ url_for('eda') }}" class="nav-link active" >
+                    <span class="d-inline-block mr-3">EDA on Route and Weather data</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('classify') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Route Classifier V0(Version 0)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('ts') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Route Classifier V1(Version 1)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('landing') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Landing Assistant</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                    <span class="d-inline-block mr-3">Performace walk-through</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+              </ul>
+
+              <footer class="text-center text-white small">
+              </footer>
+            </div>
+          </nav>
+          <div class="tm-section-wrap bg-white">
+            <section id="eda" class="row tm-section">
+                <div class="w-100 tm-double-border-1 tm-border-gray">
+                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
+                      <div class="tm-gallery-wrap">
+                          <h2 class="tm-color-primary tm-section-title mb-4 ml-2">WEATHER PATTERNS</h2>
+                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                         <!-- Indicators -->
+     <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+         <li data-target="#myCarousel" data-slide-to="2"></li>
+         <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="data:image/png;base64,{{ws_url}}" alt="Chart" height="100%" width="100%">
+      </div>
+
+      <div class="item">
+         <img src="data:image/png;base64,{{tmp_url}}" alt="Chart" height="100%" width="100%">
+      </div>
+        <div class="item">
+         <img src="data:image/png;base64,{{h_url}}" alt="Chart" height="100%" width="100%">
+      </div>
+        <div class="item">
+         <img src="data:image/png;base64,{{p_url}}" alt="Chart" height="100%" width="100%">
+      </div>
+    </div>
+  </div>
+ </div>
+   </div>
+  </div>
+  </section>
+    </div>
+      </div>
+    </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/parallax.min.js"></script>
+    <script src="static/slick/slick.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/templatemo-scripts.js"></script>
+
+  </body>
+</html>

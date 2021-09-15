@@ -3,6 +3,7 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn import  metrics
 import pickle
+import numpy as np
 
 
 def add_label(airport_df):
@@ -25,10 +26,11 @@ def SVMClassifier():
     pickle.dump(clf, open('model_svm.pkl', 'wb'))
 
 
-def SVM_predict(test_val):
+def SVM_predict(predict_list):
     SVMClassifier()
+    to_predict = np.array(predict_list).reshape(1,4)
     model = pickle.load(open('model_svm.pkl', 'rb'))
-    y_pred = model.predict(test_val)
+    y_pred = model.predict(to_predict)
     return y_pred
 
 
@@ -44,7 +46,8 @@ def SVM_PredictionMeasure():
 airport_df = pd.read_csv('scripts_driver/M1_final.csv')
 airport_df = add_label(airport_df)
 airport_df.dropna(inplace=True)
-cols = ['Temperature', 'Dew Point', 'Humidity', 'Wind Speed', 'Wind Gust', 'Pressure']
+cols = ['Temperature', 'Humidity', 'Wind Speed', 'Pressure']
 # train test split
 train_x, test_x, train_y, test_y = train_test_split(airport_df[cols], airport_df.Label, test_size=0.2,
                                                     random_state=20)
+                                                  

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TIME SERIES ON WEATHER</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="static/css/all.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/slick/slick.css"/>
+    <link rel="stylesheet" href="static/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
+    <link rel="stylesheet" href="static/css/circle.css" />
+    <link rel="stylesheet" href="static/css/card.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-sidebar-sticky">
+              <div class="tm-brand-box">
+                <div class="tm-double-border-1">
+                  <div class="tm-double-border-2">
+                    <h1 class="tm-brand text-uppercase">SPARTANZ CRUSE</h1>
+                  </div>
+                </div>
+              </div>
+
+              <ul  class="nav flex-column text-uppercase text-right tm-main-nav">
+                <li class="nav-item">
+                  <a href="{{ url_for('eda') }}" class="nav-link active" >
+                    <span class="d-inline-block mr-3">EDA on Route and Weather data</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('classify') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Route Classifier V0(Version 0)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('ts') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Route Classifier V1(Version 1)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('landing') }}" class="nav-link">
+                    <span class="d-inline-block mr-3">Landing Assistant</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                    <span class="d-inline-block mr-3">Performace walk-through</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+              </ul>
+
+              <footer class="text-center text-white small">
+              </footer>
+            </div>
+          </nav> <div class="tm-section-wrap bg-white">
+            <section id="work" class="row tm-section">
+              <div class="col-12">
+                <div class="w-100 tm-double-border-1 tm-border-gray">
+                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
+                      <div class="tm-gallery-wrap">
+                          <h2 class="tm-color-primary tm-section-title mb-4 ml-2">Our Work</h2>
+                          <div class="tm-gallery">
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/01.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/01.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/02.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/02.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/03.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/03.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/04.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/04.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/05.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/05.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/06.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/06.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/07.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/07.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="tm-gallery-item">
+                              <figure class="effect-bubba">
+                                <img src="static/img/gallery/08.jpg" alt="Our Work Image" class="img-fluid">
+                                <figcaption>
+                                  <h2>Fresh <span>Bubba</span></h2>
+                                  <p>Bubba likes to appear out of thin air.</p>
+                                  <a href="static/img/gallery/large/08.jpg">View more</a>
+                                </figcaption>
+                              </figure>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </section>
+          </div>
+
+      </div>
+    </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/parallax.min.js"></script>
+    <script src="static/slick/slick.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/templatemo-scripts.js"></script>
+
+  </body>
+</html>
