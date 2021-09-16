@@ -35,6 +35,11 @@ def eda():
 
 @app.route('/classifier', methods=['GET', 'POST'])
 def classify():
+    return render_template('classifier.html')
+
+
+@app.route('/classifierResult', methods=['GET','POST'])
+def result():
     val = []
     result = 0
     if request.method == 'POST':
@@ -50,8 +55,7 @@ def classify():
             result = SVM_predict(val)
         else:
             result = NB_predict(val)
-    return render_template('classifier.html', data=val, result = result)
-
+    return render_template('classifier.html', anchor="box-view", val=val, result=result)
 
 @app.route('/timeSeries', methods=['GET', 'POST'])
 def ts():

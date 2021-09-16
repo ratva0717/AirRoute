@@ -23,13 +23,24 @@ a {
 .small {
   font-size: 0.95rem;
 }
+.container-fluid .carousel-control-prev {
+  color: #444;
+}
 
+.container-fluid.carousel-control-next {
+  color: #444;
+}
 .tm-color-primary {
   color: #069;
 }
 
 .tm-color-gray {
-  color: #333;
+  color: rgb(51, 51, 51);
+}
+
+.tm-color-yellow {
+   background-color: rgb(233, 210, 0);
+
 }
 
 .tm-bg-black-transparent {
@@ -507,4 +518,56 @@ a {
     padding: 50px 30px;
   }
 }
+/* button  */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
 
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(8px);
+}
+
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 9s steps(25),blink 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 1em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}

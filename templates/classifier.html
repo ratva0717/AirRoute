@@ -28,7 +28,7 @@
               <div class="tm-brand-box">
                 <div class="tm-double-border-1">
                   <div class="tm-double-border-2">
-                    <h1 class="tm-brand text-uppercase">SPARTANZ CRUSE</h1>
+                    <h1 class="tm-brand text-uppercase"> FLIGHT ASSIST </h1>
                   </div>
                 </div>
               </div>
@@ -75,10 +75,10 @@
                 <div class="col-xl-6 mb-5">
                     <h2 class="tm-color-primary tm-section-title mb-4 ml-2"> ROUTE CLASSIFIER</h2>
                   <div class="tm-contact-form-wrap">
-                    <form action="" method="POST" class="tm-contact-form">
+                    <form action="{{ url_for('result') }}" method="POST" class="tm-contact-form">
                         <div class="form-group">
-                            <p> SOURCE AIRPORT </p>
-                          <input type="text" id="contact_name" name="airportName" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Source Airport" required="" />
+                            <p> DESTINATION AIRPORT </p>
+                          <input type="text" id="contact_name" name="airportName" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Destination Airport" required="" />
                         </div>
                         <div class="form-group">
                             <p> CLASSIFIER</p>
@@ -91,35 +91,46 @@
                         <br>
                         <br>
                         <div class="form-group mb-0">
-                          <button type="submit" class="slide-toggle" >
+                          <button type="submit" class="button" >
                               <center><b>Generate weather reports and predict</b></center>
                           </button>
                         </div>
                       </form>
                   </div>
                 </div>
-                <div class="box">
-
-                <div class="col-xl-26 mb-5">
-                  <div class="tm-double-border-1 tm-border-gray">
-                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
-                        <h2 class="tm-color-primary tm-section-title mb-4">{{ data }}</h2>
+                {% if anchor %}
+                <div class="box" id="box-view">
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-primary">
+                        <div class="card-body text-center">
+                                <p class="typing-demo"> Temperture : {{ val[0]}} </p>
+                                <p class="typing-demo">Humidity : {{ val[1]}} </p>
+                               <p class="typing-demo">Wind Speed : {{ val[2]}} </p>
+                                <p class="typing-demo">Air Pressure : {{ val[3]}} </p>     
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-warning">
+                        <div class="card-body text-center">
+                          <p class="card-text">{{ result }}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  {% endif %}
+                  <!-- Example split danger button -->
                 </div>
-                <div class="col-xl-26 mb-2">
-                  <div class="tm-double-border-1 tm-border-gray">
-                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
-                        <h2 class="tm-color-primary tm-section-title mb-2">{{ result }} </h2>
-                    </div>
-                  </div>
-                </div>
-                </div>
+                
               </section>
           </div>
 
       </div>
     </div>
+  
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.min.js"></script>
@@ -128,6 +139,13 @@
     <script src="static/slick/slick.min.js"></script>
     <script src="static/js/jquery.magnific-popup.min.js"></script>
     <script src="static/js/templatemo-scripts.js"></script>
+{% if anchor %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.location.hash = '#{{ anchor }}';
+    });
+</script>
+{% endif %}
 
   </body>
 </html>
