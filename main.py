@@ -30,7 +30,7 @@ def eda():
     p_fig = plot_pressure()
     h_fig = plot_humidity()
 
-    return render_template('eda.html', ws_url=w_fig, tmp_url=t_fig, p_url=p_fig, h_url=h_fig)
+    return render_template('eda.html', ws_url=w_fig, tmp_url=t_fig, p_url=p_fig, h_url=h_fig,threaded=True)
 
 
 @app.route('/classifier', methods=['GET', 'POST'])
@@ -41,7 +41,7 @@ def classify():
 @app.route('/classifierResult', methods=['GET','POST'])
 def result():
     val = []
-    result = 0
+    result_val = ''
     if request.method == 'POST':
         zip_code = request.form['airportName']
         classifier = request.form['classifier']
@@ -55,7 +55,12 @@ def result():
             result = SVM_predict(val)
         else:
             result = NB_predict(val)
-    return render_template('classifier.html', anchor="box-view", val=val, result=result)
+        if result[0] == 1:
+            result_val = 'Voila! We can make a trip..'
+        else:
+            result_val = 'Ohh no! The weather seems bad.'
+        
+    return render_template('classifier.html', anchor="box-view", val=val, result=result_val,threaded=True)
 
 @app.route('/timeSeries', methods=['GET', 'POST'])
 def ts():
@@ -90,4 +95,4 @@ def get_weather_data(zip_code, api_key):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='localhost', port=8000)
+    app.run(debug=True, host='127.0.0.1', port=8000)

@@ -116,7 +116,7 @@
                     <div class="card-group">
                       <div class="card bg-warning">
                         <div class="card-body text-center">
-                          <p class="card-text">{{ result }}</p>
+                          <p class="typing-demo">{{ result }}</p>
                         </div>
                       </div>
                     </div>
@@ -124,7 +124,12 @@
                   {% endif %}
                   <!-- Example split danger button -->
                 </div>
-                
+                {% if anchor%}
+                <div class=" alert success">
+                <span class="closebtn">&times;</span>  
+                <strong>Success!</strong>Weather features are fetched from Openweather API and classifier processed the input!
+                </div>
+                {% endif %}
               </section>
           </div>
 
@@ -144,6 +149,18 @@
     document.addEventListener("DOMContentLoaded", function() {
         document.location.hash = '#{{ anchor }}';
     });
+</script>
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 </script>
 {% endif %}
 
