@@ -1,7 +1,7 @@
 body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-family:Roboto, sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   overflow-x: hidden;
   color: #707172;
   background-color: #666;
@@ -21,7 +21,7 @@ a {
 }
 
 .small {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 .container-fluid .carousel-control-prev {
   color: #444;
@@ -49,7 +49,7 @@ a {
 
 .tm-bg-white-transparent {
   background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
 .tm-intro {
@@ -73,8 +73,8 @@ a {
   display: flex;
   align-items: center;
   height: auto;
-  max-width: 1275px;
-  padding: 66px 60px;
+  max-width: 1500px;
+  padding: 50px 60px;
 }
 
 #intro {
@@ -83,13 +83,13 @@ a {
 }
 
 .tm-brand {
-  font-size: 2.6rem;
+  font-size: 2rem;
 }
 
 .tm-brand-box {
   box-sizing: content-box;
-  width: 100%;
-  max-width: 260px;
+  width: 70%;
+  max-width: 160px;
   min-height: 160px;
   color: white;
   text-align: center;
@@ -124,11 +124,12 @@ a {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
-  padding-left: 70px;
-  padding-right: 70px;
-  width: 10px;
-  max-width: 400px;
+  z-index: 10;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 5px;
+  max-width: 10px;
+  text-align: left;
 }
 
 /* Hide scrollbar */
@@ -146,12 +147,12 @@ a {
 .tm-sidebar-sticky {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .tm-section-wrap {
-  width: calc(100% - 400px);
+  width: calc(100% - 200px);
   margin-left: auto;
   margin-right: 0;
 }
@@ -395,7 +396,7 @@ a {
 
 @media (max-width: 1600px) {
   .tm-sidebar {
-    width: 30%;
+    width: 24%;
     max-width: none;
     padding-left: 30px;
     padding-right: 30px;
@@ -406,7 +407,7 @@ a {
   }
 
   .tm-section-wrap {
-    width: 70%;
+    width: 80%;
   }
 
   .tm-img-wrap a {
@@ -543,11 +544,11 @@ a {
 }
 
 .wrapper {
-  height: 100vh;
+  height: 15vh;
   /*This part is important for centering*/
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .typing-demo {

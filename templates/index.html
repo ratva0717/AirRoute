@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <title>AIR PLANE ROUTE AND LANDING ASSISTANT</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="static/css/all.min.css" />
@@ -15,8 +14,8 @@
     <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
     <link rel="stylesheet" href="static/css/circle.css" />
     <link rel="stylesheet" href="static/css/card.css" />
+        <link rel="stylesheet" href="static/css/tab.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
   </head>
   <body>
     <div class="container-fluid">
@@ -30,7 +29,7 @@
                   </div>
                 </div>
               </div>
-                <ul class="nav flex-column text-uppercase text-right tm-main-nav">
+                <ul class="nav flex-column text-uppercase text-center tm-main-nav">
                 <li class="nav-item">
                     <a href="{{ url_for('eda') }}" >
                     <span class="nav flex-column text-uppercase text-right tm-main-nav d-inline-block mr-3">EDA on Route and Weather data</span>
@@ -71,7 +70,7 @@
             <div
               class="parallax-window"
               data-parallax="scroll"
-              data-image-src="static/img/logo.png">
+              data-image-src="static/img/gallery/large/logo.png">
               <div class="tm-section-wrap">
                 <section id="intro" class="tm-section">
                     <div class="tm-bg-white-transparent tm-intro">
@@ -88,16 +87,16 @@
                 </section>
             </div>            
           </div>
-          <div class="tm-section-wrap bg-white">
+          <div class="tm-section-wrap bg-white ">
             <section id="talk" class="row tm-section">
-              <div class="col-12 tm-section-pad">
+              <div class="col-10 tm-section-pad">
                   <div class="tm-flex-item-left">
                       <div class="tm-w-80">
                         <h2 class="tm-color-primary tm-section-title mb-4">PERFORMANCE BOARD</h2>
                           <div class="row">
                             <div class="column">
                               <div class="mb-5">
-                              <div class="card" >
+                              <div  class="card" >
                               <div class="wrapper container">
                               <div class="c100 p94 blue">
                                 <span>{{ SVM_Accuracy }}%</span>
@@ -123,19 +122,7 @@
                           </div>
                         <div class="container">
                           <h4><b>SVM CLASSIFIER</b></h4>
-                              <div class = "foo b"></div>
-                            <div >Accuracy</div>
-                            <div class = "foo o"></div>
-                              <div >Precision</div>
-                            <div class = "foo g"></div>
-                              <div >Recall</div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="column">
-                    <div class="mb-5">
-                      <div class="card" >
                         <div class="wrapper container">
                           <div class="c100 p94 blue">
                             <span>{{ NB_Accuracy }}%</span>
@@ -159,12 +146,18 @@
                             </div>
                         </div>
                       </div>
-                    <div class="container">
+                      <div class="container">
                       <h4><b>NAIVE BAYES CLASSIFIER</b></h4>
+                      </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  </div>
-                </div>
+                        <div class = "foo b"></div>
+                            <div >Accuracy</div>
+                            <div class = "foo o"></div>
+                              <div >Precision</div>
+                            <div class = "foo g"></div>
+                              <div >Recall</div>
               </div>
             </div>
               </div>

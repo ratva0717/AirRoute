@@ -27,7 +27,7 @@ def SVMClassifier():
 
 
 def SVM_predict(predict_list):
-    SVMClassifier()
+    # SVMClassifier()
     to_predict = np.array(predict_list).reshape(1,4)
     model = pickle.load(open('model_svm.pkl', 'rb'))
     y_pred = model.predict(to_predict)

@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 from scripts_driver.visualize import plot_wind, plot_temp, plot_pressure, plot_humidity
 from scripts_driver.svm_model import *
 from scripts_driver.NB_model import *
+from scripts_driver.viz import *
+from scripts_driver.timeseries import predict
 import pickle
 import pandas as pd
 import requests
@@ -29,7 +31,6 @@ def eda():
     t_fig = plot_temp()
     p_fig = plot_pressure()
     h_fig = plot_humidity()
-
     return render_template('eda.html', ws_url=w_fig, tmp_url=t_fig, p_url=p_fig, h_url=h_fig,threaded=True)
 
 
@@ -64,7 +65,11 @@ def result():
 
 @app.route('/timeSeries', methods=['GET', 'POST'])
 def ts():
-    return render_template('timeseries.html')
+    data  = predict(2)
+    # time_data_2, temp_arr_2, dewp_2, humid_2, wind_dir_2, wind_speed_2, pressure_2 = new_data(predict(2))
+    # time_data_3, temp_arr_3, dewp_3, humid_3, wind_dir_3, wind_speed_3, pressure_3 = new_data(predict(3))
+    # time_data_4, temp_arr_4, dewp_4, humid_4, wind_dir_4, wind_speed_4, pressure_4 = new_data(predict(4))
+    return render_template('timeseries.html', one_data = data)
 
 
 @app.route('/landing', methods=['GET', 'POST'])

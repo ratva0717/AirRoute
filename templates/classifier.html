@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
     <link rel="stylesheet" href="static/css/circle.css" />
     <link rel="stylesheet" href="static/css/card.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+        <link rel="stylesheet" href="static/css/tab.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
   </head>
@@ -73,7 +75,7 @@
 <div class="tm-section-wrap bg-white">
             <section id="svm" class="row tm-section">
                 <div class="col-xl-6 mb-5">
-                    <h2 class="tm-color-primary tm-section-title mb-4 ml-2"> ROUTE CLASSIFIER</h2>
+                    <h2 class="tm-color-primary tm-section-title"> ROUTE CLASSIFIER</h2>
                   <div class="tm-contact-form-wrap">
                     <form action="{{ url_for('result') }}" method="POST" class="tm-contact-form">
                         <div class="form-group">
@@ -97,6 +99,16 @@
                         </div>
                       </form>
                   </div>
+                  <br>
+                  <div class="scroll" >
+                  <p class="item-1">Abraham Lincoln Capital Airport <br> ZIP CODE:62707 <br> IATA: SPI </p>
+                  <p class="item-2">Bangor International Airport <br>ZIP CODE:04401<br>IATA: BGR</p>
+                  <p class="item-3">Cannon Air Force Base <br>ZIP CODE:62707 <br>IATA: CVS</p>
+                  <p class="item-4">Dallas Love Field Airport <br> ZIP CODE:75235 <br> IATA: DAL </p>
+                  <p class="item-5">Eppley Airfield <br> ZIP CODE:NE 68110 <br> IATA: OMA </p>
+                  <p class="item-6">Fort Smith Regional Airport <br> ZIP CODE:72344 <br> IATA: FSM </p>
+                  <p class="item-7">George Bush Intercontinental Airport <br> ZIP CODE:72243 <br> IATA: IAH </p>
+                </div>
                 </div>
                 {% if anchor %}
                 <div class="box" id="box-view">
@@ -127,7 +139,7 @@
                 {% if anchor%}
                 <div class=" alert success">
                 <span class="closebtn">&times;</span>  
-                <strong>Success!</strong>Weather features are fetched from Openweather API and classifier processed the input!
+                <strong>Success!</strong>  Weather features are being fetched from Openweather API and Classifier processed the input!
                 </div>
                 {% endif %}
               </section>
