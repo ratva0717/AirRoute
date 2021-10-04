@@ -19,8 +19,11 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">        
+      <div class="row">
           <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
             <div class="tm-sidebar-sticky">
               <div class="tm-brand-box">
                 <div class="tm-double-border-1">
@@ -29,43 +32,44 @@
                   </div>
                 </div>
               </div>
-                <ul class="nav flex-column text-uppercase text-center tm-main-nav">
+
+              <ul  class="nav flex-column text-uppercase text-center tm-main-nav">
                 <li class="nav-item">
-                    <a href="{{ url_for('eda') }}" >
-                    <span class="nav flex-column text-uppercase text-right tm-main-nav d-inline-block mr-3">EDA on Route and Weather data</span>
-                 <span class="d-inline-block tm-white-rect"></span>
+                  <a href="{{ url_for('eda') }}" class="nav-link active" >
+                    <span class="d-inline-block mr-8">EDA on Route and Weather data</span>
+                    <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url_for('classify') }}" class="nav-link">
-                    <span class="d-inline-block mr-3">Route Classifier V0(Version 0)</span>
+                    <span class="d-inline-block mr-8">Route Classifier V0(Version 0)</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url_for('ts') }}" class="nav-link">
-                    <span class="d-inline-block mr-3">Route Classifier V1(Version 1)</span>
+                    <span class="d-inline-block mr-8">Route Classifier V1(Version 1)</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url_for('landing') }}" class="nav-link">
-                    <span class="d-inline-block mr-3">Landing Assistant</span>
+                    <span class="d-inline-block mr-8">Landing Assistant</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#talk" class="nav-link">
-                    <span class="d-inline-block mr-3">Performace walk-through</span>
+                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                    <span class="d-inline-block mr-8">Performace walk-through</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
-                </ul>
+              </ul>
+
               <footer class="text-center text-white small">
               </footer>
             </div>
-          </nav>
-          
+          </nav> 
           <main role="main" class="ml-sm-auto col-12">
             <div
               class="parallax-window"

@@ -1,86 +1,179 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
-
-.scroll { 
-  font-family: Roboto, sans-serif;
-  color: #f3390a;
-  overflow: hidden;
-  font-weight: bold;
+.scroll-view {
+    font-family: Roboto, sans-serif;
+    color: #f3390a;
+    overflow: hidden;
+    font-weight: bold;
 }
 
-.item-1, 
-.item-2, 
+.item-1,
+.item-2,
 .item-3,
 .item-4,
 .item-5,
 .item-6,
-.item-7{
-	position: absolute;
-  display: block;
-  top: 26.8em;
-  text-align: center;
-  width: 70%;
-  font-size: 1.01em;
-	animation-duration: 15s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
+.item-7 {
+    position: absolute;
+    display: block;
+    top: 26.8em;
+    text-align: center;
+    width: 70%;
+    font-size: 1.01em;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
-.item-1{
-	animation-name: anim-1;
+.item-1 {
+    animation-name: anim-1;
 }
-.item-2{
-	animation-name: anim-2;
+
+.item-2 {
+    animation-name: anim-2;
 }
-.item-3{
-	animation-name: anim-3;
+
+.item-3 {
+    animation-name: anim-3;
 }
-.item-4{
-	animation-name: anim-4;
+
+.item-4 {
+    animation-name: anim-4;
 }
-.item-5{
-	animation-name: anim-5;
+
+.item-5 {
+    animation-name: anim-5;
 }
-.item-6{
-	animation-name: anim-6;
+
+.item-6 {
+    animation-name: anim-6;
 }
-.item-7{
-	animation-name: anim-7;
+
+.item-7 {
+    animation-name: anim-7;
 }
 
 @keyframes anim-1 {
-	0%, 8.3% { left: -100%; opacity: 0; }
-  8.3%,18% { left: 25%; opacity: 1; }
-  23.33%, 100% { left: 110%; opacity: 0; }
+    0%,
+    8.3% {
+        left: -100%;
+        opacity: 0;
+    }
+    8.3%,
+    18% {
+        left: 25%;
+        opacity: 1;
+    }
+    23.33%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
 
 @keyframes anim-2 {
-	0%, 16.33% { left: -100%; opacity: 0; }
-  22.63%, 30.29% { left: 25%; opacity: 1; }
-  32.66%, 100% { left: 110%; opacity: 0; }
+    0%,
+    16.33% {
+        left: -100%;
+        opacity: 0;
+    }
+    22.63%,
+    30.29% {
+        left: 25%;
+        opacity: 1;
+    }
+    32.66%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
 
 @keyframes anim-3 {
-	0%, 29.66% { left: -100%; opacity: 0; }
-  31.96%, 40.62% { left: 25%; opacity: 1; }
-  41.09%, 100% { left: 110%; opacity: 0; }
+    0%,
+    29.66% {
+        left: -100%;
+        opacity: 0;
+    }
+    31.96%,
+    40.62% {
+        left: 25%;
+        opacity: 1;
+    }
+    41.09%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
+
 @keyframes anim-4 {
-	0%, 42.99% { left: -100%; opacity: 0; }
-  44.3%,50.0% { left: 25%; opacity: 1; }
-  52.33%, 100% { left: 110%; opacity: 0; }
+    0%,
+    42.99% {
+        left: -100%;
+        opacity: 0;
+    }
+    44.3%,
+    50.0% {
+        left: 25%;
+        opacity: 1;
+    }
+    52.33%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
+
 @keyframes anim-5 {
-	0%, 51.33% { left: -100%; opacity: 0; }
-  53.63%, 68.29% { left: 25%; opacity: 1; }
-  69.66%, 100% { left: 110%; opacity: 0; }
+    0%,
+    51.33% {
+        left: -100%;
+        opacity: 0;
+    }
+    53.63%,
+    68.29% {
+        left: 25%;
+        opacity: 1;
+    }
+    69.66%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
+
 @keyframes anim-6 {
-	0%, 67.33% { left: -100%; opacity: 0; }
-  69.63%, 80.29% { left: 25%; opacity: 1; }
-  83.66%, 100% { left: 110%; opacity: 0; }
+    0%,
+    67.33% {
+        left: -100%;
+        opacity: 0;
+    }
+    69.63%,
+    80.29% {
+        left: 25%;
+        opacity: 1;
+    }
+    83.66%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
+
 @keyframes anim-7 {
-	0%, 82.33% { left: -100%; opacity: 0; }
-  83.63%, 98.29% { left: 25%; opacity: 1; }
-  99.96%, 100% { left: 110%; opacity: 0; }
+    0%,
+    82.33% {
+        left: -100%;
+        opacity: 0;
+    }
+    83.63%,
+    98.29% {
+        left: 25%;
+        opacity: 1;
+    }
+    99.96%,
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
 }
