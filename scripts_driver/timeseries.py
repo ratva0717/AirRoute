@@ -5,14 +5,22 @@ import matplotlib.pyplot  as plt
 import base64
 import io
 
+
+df = pd.read_csv('scripts_driver\last_24.csv')
+temp = df['temp'].values.tolist()
+dew = df['dewp'].values.tolist()
+humid = df['humid'].values.tolist()
+winddirection = df['wind_dir'].values.tolist()
+windspeed = df['wind_speed'].values.tolist()
+pressure = df['pressure'].values.tolist()
+
 def predict(val):
-    d = {}
     t_arr = []
     d_arr = []
-    h_arr = []
-    ws=[]
+    h_arr  = []
+    ws = []
     wd = []
-    pressure = []
+    press = []
     model_fit = pickle.load(open('model_ts.pkl','rb'))
     yhat = model_fit.forecast(model_fit.y, steps=val)
     for i in range(len(yhat)):
@@ -28,14 +36,15 @@ def predict(val):
             elif j == 4:
                 ws.append(yhat[i][j])
             else:
-                pressure.append(yhat[i][j])
-    d['temp'] = t_arr
-    d['dewp'] = d_arr
-    d['humid'] = h_arr
-    d['wind_dir'] = wd
-    d['wind_speed'] = ws
-    d['pressure'] = pressure
-    return d
+                press.append(yhat[i][j])
+    temp.extend(t_arr)
+    dew.extend(d_arr)
+    humid.extend(h_arr)
+    winddirection.extend(wd)
+    windspeed.extend(ws)
+    pressure.extend(pressure)
+    
+    return temp, dew, humid, winddirection, windspeed, pressure
 
 
 

@@ -38,7 +38,7 @@
               <ul  class="nav flex-column text-uppercase text-center tm-main-nav">
                 <li class="nav-item">
                   <a href="{{ url_for('eda') }}" class="nav-link active" >
-                    <span class="d-inline-block mr-8">EDA on Route and Weather data</span>
+                    <span class="d-inline-block mr-8">EDA Weather data</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
@@ -61,7 +61,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                  <a href="{{ url_for('index') }}#performace" class="nav-link">
                     <span class="d-inline-block mr-8">Performace walk-through</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
@@ -74,8 +74,7 @@
           </nav> 
           <div class="tm-section-wrap bg-white">
             <section id="svm" class="row tm-section">
-                <div class="col-xl-6 mb-5">
-                    
+                <div class="col-xl-8 mb-5">
                   <div class="tm-contact-form-wrap">
                     <form action="{{ url_for('result') }}" method="POST" class="tm-contact-form">
                         <div class="form-group">
@@ -89,7 +88,6 @@
                             <option value="SVM">SVM</option>
                             <option value="NB">NB</option>
                             </select>
-
                         </div>
                         <br>
                         <br>

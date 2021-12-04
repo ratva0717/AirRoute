@@ -63,6 +63,7 @@ a {
 
 .tm-section-title {
     font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .parallax-window {
@@ -320,8 +321,8 @@ a {
 /* Clients */
 
 .tm-section-pad {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 180px;
+    padding-right: 80px;
 }
 
 .tm-clients-images {
@@ -405,7 +406,7 @@ a {
 
 @media (max-width: 1600px) {
     .tm-sidebar {
-        width: 26%;
+        width: 24%;
         max-width: none;
         padding-left: 30px;
         padding-right: 30px;
@@ -414,7 +415,7 @@ a {
         margin: 5px;
     }
     .tm-section-wrap {
-        width: 80%;
+        width: 88%;
     }
     .tm-img-wrap a {
         width: 100%;

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <body>
+<body>
     <div class="container-fluid">
       <div class="row">
           <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
@@ -60,7 +60,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                  <a href="{{ url_for('index') }}#performace" class="nav-link">
                     <span class="d-inline-block mr-8">Performace walk-through</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
@@ -72,11 +72,72 @@
             </div>
           </nav> 
           <div class="tm-section-wrap bg-white">
-        <section id="work" class="row tm-section">
-</section>
-  </div>
+            <section id="svm" class="row tm-section">
+                <div class="col-xl-8 mb-5">
+                  <div class="tm-contact-form-wrap">
+                    <form action="{{ url_for('result') }}" method="POST" class="tm-contact-form">
+                        <div class="form-group">
+                        <h2 class="tm-color-primary tm-section-title"> RUNWAY PREDICTOR</h2>
+                          
+                         
+                            <input id="video_file" name="video_file" type="file">
+                            <BR>
+                              <BR>
+                            <input type="submit" class="button" value="Upload">
+                       
+
+                        <div class="video-display"></div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group mb-0">
+                          <button type="submit" class="button" >
+                              <center><b>Use the video and predict</b></center>
+                          </button>
+                        </div>
+                      </form>
+                  </div>
+                  <br>
+                  
+                </div>
+                {% if anchor %}
+                <div class="box" id="box-view">
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-primary">
+                        <div class="card-body text-center">
+                                <p class="typing-demo"> Temperture : {{ val[0]}} </p>
+                                <p class="typing-demo">Humidity : {{ val[1]}} </p>
+                               <p class="typing-demo">Wind Speed : {{ val[2]}} </p>
+                                <p class="typing-demo">Air Pressure : {{ val[3]}} </p>     
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-warning">
+                        <div class="card-body text-center">
+                          <p class="typing-demo">{{ result }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  <!-- Example split danger button -->
+                </div>
+                {% if anchor%}
+                <div class=" alert success">
+                <span class="closebtn">&times;</span>  
+                <strong>Success!</strong>  Runways are being fetched from video !
+                </div>
+                {% endif %}
+              </section>
+          </div>
+
       </div>
     </div>
+  
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.min.js"></script>
@@ -84,6 +145,26 @@
     <script src="static/js/parallax.min.js"></script>
     <script src="static/slick/slick.min.js"></script>
     <script src="static/js/jquery.magnific-popup.min.js"></script>
-    <script src="static/js/templatemo-scripts.js"></script> 
+    <script src="static/js/templatemo-scripts.js"></script>
+{% if anchor %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.location.hash = '#{{ anchor }}';
+    });
+</script>
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
+{% endif %}
+
   </body>
 </html>

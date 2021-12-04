@@ -65,11 +65,11 @@ def result():
 
 @app.route('/timeSeries', methods=['GET', 'POST'])
 def ts():
-    data  = predict(2)
+    temp, dew, humid, wd, ws, pressure  = predict(2)
     # time_data_2, temp_arr_2, dewp_2, humid_2, wind_dir_2, wind_speed_2, pressure_2 = new_data(predict(2))
     # time_data_3, temp_arr_3, dewp_3, humid_3, wind_dir_3, wind_speed_3, pressure_3 = new_data(predict(3))
     # time_data_4, temp_arr_4, dewp_4, humid_4, wind_dir_4, wind_speed_4, pressure_4 = new_data(predict(4))
-    return render_template('timeseries.html', one_data = data)
+    return render_template('timeseries.html', temp=temp, dew=dew, humid=humid, wd=wd, ws=ws, pressure=pressure)
 
 
 @app.route('/landing', methods=['GET', 'POST'])

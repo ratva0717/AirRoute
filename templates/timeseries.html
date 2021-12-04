@@ -37,7 +37,7 @@
               <ul  class="nav flex-column text-uppercase text-center tm-main-nav">
                 <li class="nav-item">
                   <a href="{{ url_for('eda') }}" class="nav-link active" >
-                    <span class="d-inline-block mr-8">EDA on Route and Weather data</span>
+                    <span class="d-inline-block mr-8">EDA on Weather data</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
@@ -60,7 +60,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for('index') }}#talk" class="nav-link">
+                  <a href="{{ url_for('index') }}#performace" class="nav-link">
                     <span class="d-inline-block mr-8">Performace walk-through</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
@@ -71,8 +71,8 @@
               </footer>
             </div>
           </nav> <div class="tm-section-wrap bg-white">
+          {% block body %}
             <section id="work" class="row tm-section">
-
 <div class="tab-wrap">
     <input type="radio" name="tabs" id="tab1" checked>
     <div class="tab-label-content" id="tab1-content">
@@ -85,7 +85,7 @@
     <input type="radio" name="tabs" id="tab2">
     <div class="tab-label-content" id="tab2-content">
       <label for="tab2">2 hours</label>
-      <div class="tab-content">{{ one_data  }}
+      <div class="tab-content">{{ dew }}
        </div>
     </div>
     
@@ -297,5 +297,6 @@ var myBarChart = new Chart(ctx, {
   options: options
 });
   </script>
+  {% endblock %}
   </body>
 </html>
