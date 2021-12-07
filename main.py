@@ -1,11 +1,14 @@
-from flask import Flask, render_template, request
+from re import DEBUG, sub
+from flask import Flask, render_template, request, redirect, send_file, url_for
+from werkzeug.utils import secure_filename, send_from_directory
+import os
+import subprocess
 from scripts_driver.visualize import plot_wind, plot_temp, plot_pressure, plot_humidity
 from scripts_driver.svm_model import *
 from scripts_driver.NB_model import *
 from scripts_driver.viz import *
 from scripts_driver.timeseries import predict
 import pickle
-import pandas as pd
 import requests
 import configparser
 import time

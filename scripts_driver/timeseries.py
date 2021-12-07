@@ -13,7 +13,7 @@ humid = df['humid'].values.tolist()
 winddirection = df['wind_dir'].values.tolist()
 windspeed = df['wind_speed'].values.tolist()
 pressure = df['pressure'].values.tolist()
-
+y = 2
 def predict(val):
     t_arr = []
     d_arr = []
@@ -22,7 +22,7 @@ def predict(val):
     wd = []
     press = []
     model_fit = pickle.load(open('model_ts.pkl','rb'))
-    yhat = model_fit.forecast(model_fit.y, steps=val)
+    yhat = model_fit.forecast(y = model_fit.y, steps=val)
     for i in range(len(yhat)):
         for j in range(len(yhat[0])):
             if j == 0:
