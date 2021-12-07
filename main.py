@@ -22,7 +22,7 @@ uploads_dir = os.path.join(app.instance_path, 'uploads')
 def index():
     # Performence
     NB_Accuracy, NB_Precision, NB_Recall = NB_PredictionMeasure()
-    SVM_Accuracy, SVM_Precisio, SVM_Recall = SVM_PredictionMeasure()
+    SVM_Accuracy, SVM_Precision, SVM_Recall = SVM_PredictionMeasure()
 
     return render_template('index.html',
                            NB_Accuracy=NB_Accuracy, NB_Precision=NB_Precision, NB_Recall=NB_Recall,
