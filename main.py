@@ -12,11 +12,14 @@ import pickle
 import requests
 import configparser
 import time
+import json
+import logging
+
 
 app = Flask(__name__)
 
 uploads_dir = os.path.join(app.instance_path, 'uploads')
-
+logging.basicConfig(level=logging.DEBUG)
 
 @app.route('/')
 def index():
@@ -68,13 +71,9 @@ def result():
         
     return render_template('classifier.html', anchor="box-view", val=val, result=result_val,threaded=True)
 
-@app.route('/timeSeries', methods=['GET', 'POST'])
+@app.route('/timeSeries', methods=['GET'])
 def ts():
-    temp, dew, humid, wd, ws, pressure  = predict(2)
-    # time_data_2, temp_arr_2, dewp_2, humid_2, wind_dir_2, wind_speed_2, pressure_2 = new_data(predict(2))
-    # time_data_3, temp_arr_3, dewp_3, humid_3, wind_dir_3, wind_speed_3, pressure_3 = new_data(predict(3))
-    # time_data_4, temp_arr_4, dewp_4, humid_4, wind_dir_4, wind_speed_4, pressure_4 = new_data(predict(4))
-    return render_template('timeseries.html', temp=temp, dew=dew, humid=humid, wd=wd, ws=ws, pressure=pressure)
+    return render_template('timeseries.html')
 
 
 @app.route('/landing', methods=['GET', 'POST'])
@@ -105,6 +104,17 @@ def return_file():
         # return send_from_directory(loc, obj)
     except Exception as e:
         return str(e)
+    
+@app.route("/Increment", methods=['POST'])
+def Increment():
+    if not request.method == "POST":
+        return
+    val = request.args.get('new_data')
+    print(val)
+    val = 2
+    temp, dew, humid, wd, ws, pressure  = predict(val)
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
 def get_api_key():
     config = configparser.ConfigParser()
     config.read('config.ini')

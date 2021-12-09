@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #f2f8ff;
+    padding-left: 20%;
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        display: block;
+        margin-bottom: 40px;
+        padding-top: 10px;
+    }
+}
+
+#container {
+    height: 200px;
+    width: 520px;
+    background: #fff;
+    border: 10px solid #e2ebf4;
+    position: relative;
+}
+
+#container h2 {
+    color: #7eaf2f;
+    font-size: 25px;
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    padding-left: 8%;
+}
+
+#container h1 {
+    width: 80px;
+    height: 80px;
+    text-align: left;
+    font-size: 50px;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    padding-left: 16%;
+    color: #124b52;
+}
+
+#buttons {
+    height: 80px;
+    width: 260px;
+    position: absolute;
+    bottom: -10%;
+    padding-left: 30%;
+}
+
+#buttons button {
+    height: 35px;
+    width: 50px;
+    background: #1479ff;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid #191c2130;
+    cursor: pointer;
+    align-items: center;
+}
+
+#increment {
+    position: absolute;
+    right: 3;
+}
+
+
+/* Float four columns side by side */
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    text-align: center;
+    background-color: #ffffff;
+    column-gap: 70px;
+    margin: .6rem;
+    border: 3px solid #c5cdce;
+}

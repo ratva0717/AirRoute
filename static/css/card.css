@@ -1,6 +1,6 @@
 @media screen and (max-width: 600px) {
     .column {
-        width: 50%;
+        width: 20%;
         display: block;
         margin-bottom: 20px;
     }
@@ -22,7 +22,7 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 55%;
+    width: 25%;
     border-radius: 10px;
     align-items: center;
 }

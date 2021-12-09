@@ -99,7 +99,11 @@
                     </div>
                   </div>
                   <br>
-                  
+                  {% if anchor%}
+                  <div >
+                  <img src ='runs/exp/test_1.png' width=200px, height=200px/>
+                  </div>
+                  {% endif %}
                 </div>
               </section>
           </div>
@@ -120,18 +124,6 @@
     document.addEventListener("DOMContentLoaded", function() {
         document.location.hash = '#{{ anchor }}';
     });
-</script>
-<script>
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
 </script>
 {% endif %}
 

@@ -38,7 +38,7 @@
               <ul  class="nav flex-column text-uppercase text-center tm-main-nav">
                 <li class="nav-item">
                   <a href="{{ url_for('eda') }}" class="nav-link active" >
-                    <span class="d-inline-block mr-8">EDA on Weather data</span>
+                    <span class="d-inline-block mr-8">EDA Weather data</span>
                     <span class="d-inline-block tm-white-rect"></span>
                   </a>
                 </li>
@@ -73,31 +73,51 @@
             </div>
           </nav> 
           <div class="tm-section-wrap bg-white">
-            <section id="svm" class="row tm-section">
-            <div class=="pad-20">
-            <p> Here, we are basically analyse weather features and classify it with help of below algorithms whether we could make the journey or not. To achieve this, we have used below two classification algorithms.</p>
-                        <h3> Naive Bayes</h3>
-                          <p>They are a group of 
-                              classification algorithms based on Bayes’ Theorem. It 
-                              is a family of algorithms where all of them share a 
-                              common principle, i.e. features being classified that are 
-                              independent of each other. </p>
-                        <h3>Support Vector Machine </h3>
-                        <p>SVMs are a supervised 
+            <div class="tm-section-wrap bg-white tm-color-yellow">
+              <section id="eda" class="row tm-section">
+              <div class="row tm-clients-images">
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 tm-img-wrap">
+                            <img src="static/img/SVM.jpeg" alt="Client Image" class="img-fluid tm-client-img" />
+                              <br>
+                              <br>
+                              <br>
+                              <h3 style="text-align:center;"> SVM</h3>
+                               <p style="text-align:center;">SVMs are a supervised 
                                 learning strategy that is broadly utilized for classification 
-                                and regression procedures. They have a place with a 
+                                and regression procedures. 
+                            They have a place with a 
                                 group of generalized linear classification. A unique
                                 property of SVM is, SVM simultaneously minimizes the 
                                 empirical classification error and maximizes the 
-                                geometric margin. So SVM is termed as Maximum 
+                                geometric margin.
+                          So SVM is termed as Maximum 
                                 Margin Classifiers.On each side of the hyperplane, two 
                                 hyperplanes that are parallel are produced that differ the 
-                                information. The one that amplifies the distance between 
-                                the two parallel hyperplanes is the separating hyperplane. 
-                                A thoery is made that the bigger the edge or distance 
-                                between these parallel hyperplanes the better the
-                                speculation mistake of the classifier will be. We consider 
-                                data points of the structure. </p>
+                                information. </p>
+  
+                          </div>
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 tm-img-wrap">
+                              <img src="static/img/NB.jpeg" alt="Client Image" class="img-fluid tm-client-img" />
+                              <br>
+                              <br>
+                              <br>
+                              <BR>
+                                <BR>
+                                  <BR>
+                              <h3 style="text-align:center;"> Naive Bayes</h3>
+                              <p style="text-align:center;"> They are a group of 
+                                classification algorithms based on Bayes’ Theorem. 
+                                It 
+                                is a family of algorithms where all of them share a 
+                                common principle, i.e. features being classified that are 
+                                independent of each other.</p>
+                          </div>
+                    </div>
+          <div class=="pad-20 ">
+          <div class="  tm-section-wrap bg-white">
+          <section id="svm" class="row tm-section">
+            <div class=="pad-20 ">            
+                        <h3 style="text-align:center;">ROUTE RPEDICTION MODEL </h3>
                             </div>
                 <div class="col-xl-6 mb-5">
                   <div class="tm-contact-form-wrap">

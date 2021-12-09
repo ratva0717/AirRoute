@@ -1,71 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style> 
-      /*apply css properties to body tag*/ 
-      body { 
-          position: absolute; 
-          left: 25%; 
-          text-align: center; 
-      } 
-
-      /*apply css properties to container class*/ 
-
-      .container { 
-          justify-content: center; 
-          align-items: center; 
-          display: flex; 
-          height: 100%; 
-          text-align: center; 
-      } 
-
-      /*apply css properties to button tag*/ 
-
-      button { 
-          width: 40px; 
-          height: 40px; 
-          font-size: 30px; 
-          background-color: green; 
-          color: honeydew;
-          display: inline;
-      } 
-      .floated {
-        float:left;
-        margin-right:5px;
-     }
-     .buttons {
-      width: 960px;
-      margin: 0 auto;
-    }
-    
-    .action_btn {
-      display: inline-block;
-      width: calc(50% - 4px);
-      margin: 0 auto;
-    }
-      /*apply hover effect to button tag*/ 
-
-      button:hover { 
-          background-color: greenyellow; 
-          color: grey; 
-      } 
-
-      /*apply css properties to h2 tag*/ 
-
-      h2 { 
-          color: black; 
-          margin: 0 50px; 
-          font-size: 45px; 
-      } 
-      /*apply css properties to h1 tag*/ 
-
-      h1 { 
-          font-size: 35px; 
-          color: green; 
-          text-align: center; 
-          padding-left: 10%; 
-      } 
-  </style> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -79,11 +14,108 @@
     <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
     <link rel="stylesheet" href="static/css/tab.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/counter.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <body>
+    <div id="container">
+      <h2>Predicted Weather Factors In Hours</h2>
+      <h1 id="counterValue"  class="counterValue">0</h1>
+      <div id="buttons">
+          <button style="margin:10px;" id="decrement" > - </button>
+          <button style="margin:10px;" id="increment" > + </button>
+      </div>
+  </div>
+</form>
+  <script>
+  let increment = document.querySelector("#increment");
+    let decrement = document.querySelector("#decrement");
+    let counterValue = document.querySelector("#counterValue");
+    
+    let counter = 0;
+    
+    increment.addEventListener("click" , ()=>{
+        counter++;
+        counterValue.innerText = counter;
+        let temp_v = 40;
+        let dew_v = 15;
+        let humid_v = 19;
+        let ws_v = 28;
+        let wd_v = 25;
+        let pressure_v = 49;
+        temp.innerText = temp_v*(counter)+ (counter*counter*6);
+        dew.innerText = dew_v*(counter)+ (counter*counter*6);
+        humid.innerText = humid_v*(counter)+ (counter*counter*6);
+        ws.innerText = ws_v*(counter)+ (counter*counter*6);
+        wd.innerText = wd_v*(counter)+ (counter*counter*6);
+        pressure.innerText = pressure_v*(counter)+ (counter*counter*6);
+
+    })
+    ;
+    decrement.addEventListener("click" , ()=>{
+        counter--;
+        counterValue.innerText = counter;
+        let temp_v = 40;
+        let dew_v = 15;
+        let humid_v = 19;
+        let ws_v = 28;
+        let wd_v = 25;
+        let pressure_v = 45;
+        temp.innerText = temp_v*(counter)+ (counter*counter*6);
+        dew.innerText = dew_v*(counter)+ (counter*counter*6);
+        humid.innerText = humid_v*(counter)+ (counter*counter*6);
+        ws.innerText = ws_v*(counter)+ (counter*counter*6);
+        wd.innerText = wd_v*(counter)+ (counter*counter*6);
+        pressure.innerText = pressure_v*(counter)+ (counter*counter*6);
+    });
+    </script>
+  <div class="row">
+      <div class="column">
+        <div class="card">
+          <h3>Temperature</h3>
+          <p id="temp"> 0 </p>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <h3>Dew</h3>
+          <p id="dew"> 0 </p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <h3 > Humid </h3>
+          <p id="humid"> 0 </p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <h3 >Wind direction</h3>
+          <p id="wd"> 0 </p>
+        </div>
+      </div>
+      <div class="column">
+          <div class="card">
+            <h3>Wind Speed</h3>
+            <p id="ws">  0 </p>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <h3>Pressure</h3>
+            <p id="pressure"> 0 </p>
+          </div>
+        </div>
+    </div>
+    
+
+
     <div class="container-fluid">
       <div class="row">
           <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
@@ -136,55 +168,12 @@
               </footer>
             </div>
           </nav> <div class="tm-section-wrap bg-white">
+            <section id="work" class="row tm-section">
+</section>
   </div>
       </div>
     </div>
-    <div class="buttons">
-      <button name="submit" class="action_btn submit" type="submit" value="Save" onclick="myFunction()">Temp</button>
-      <button name="submit" class="action_btn cancel" type="submit" value="Cancel" onclick="myFunction2()">HUMIDITY</button>
-      <p id="saved"></p>
-  </div>
-
-    <h1>Increment and Decrement counter</h1> 
-  
-        <div ="container">
-          <div="floated" >
-            <!-- adding button and heading to show the digits -->
-            <!-- increment() and decrement() functions on button click-->
-            
-            <button onclick="increment()">+</button>
-             <h2 id="counting"></h2> 
-             <button onclick="decrement()">-</button>
-        </div>
-            
-             
-            
-        </div> 
-        <!-- JavaScript code-->
-        <script> 
-            //initialising a variable name data 
-            var data = 0; 
-  
-            //printing default value of data that is 0 in h2 tag 
-            document.getElementById("counting").innerText = data; 
-  
-            //creation of increment function 
-            function increment() { 
-                data = data + 1; 
-                document.getElementById("counting").innerText = data; 
-            } 
-            //creation of decrement function 
-            function decrement() { 
-                data = data - 1; 
-                document.getElementById("counting").innerText = data; 
-            } 
-        </script> 
-
-
-
-
-
-
+    </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.min.js"></script>
@@ -193,184 +182,5 @@
     <script src="static/slick/slick.min.js"></script>
     <script src="static/js/jquery.magnific-popup.min.js"></script>
     <script src="static/js/templatemo-scripts.js"></script>
-  <script>
-var canvas = document.getElementById("myChart");
-var ctx = canvas.getContext('2d');
-var time = ['2013-12-29 19:00:00', '2013-12-29 20:00:00', '2013-12-29 21:00:00', '2013-12-29 22:00:00', '2013-12-29 23:00:00', '2013-12-30 00:00:00', 
-'2013-12-30 01:00:00', '2013-12-30 02:00:00', '2013-12-30 03:00:00', '2013-12-30 04:00:00', '2013-12-30 05:00:00', '2013-12-30 06:00:00', '2013-12-30 07:00:00', '2013-12-30 08:00:00', '2013-12-30 09:00:00', '2013-12-30 10:00:00', '2013-12-30 11:00:00', '2013-12-30 12:00:00', '2013-12-30 13:00:00', '2013-12-30 14:00:00', '2013-12-30 15:00:00', '2013-12-30 16:00:00', '2013-12-30 17:00:00', '2013-12-30 18:00:00']
-var temp =  [42, 42, 44, 44, 44, 42, 42, 39, 39, 39, 37, 41, 42, 42, 46, 46, 42, 39, 39, 37, 35, 33, 32, 30]
-var dewp = [39, 39, 39, 37, 35, 35, 35, 35, 33, 35, 33,37, 37, 37, 35, 35, 30, 26, 23, 21, 17, 15, 12, 10]
-var humid = [88, 86, 86, 78, 72, 75, 75, 82, 81, 85, 85, 85, 82, 79, 67, 63, 62, 57, 52, 50, 47, 47, 44, 42]
-var wind_dir = [310, 310, 310, 270, 290, 300, 270, 260, 260, 260, 230, 260, 260, 260, 280, 270, 330, 320, 330, 330, 340, 330, 320, 340]
-var wind_speed =  [18, 23, 19, 10, 16, 9, 11, 9, 10, 9, 10, 9, 9, 10, 12, 16, 18, 17, 17, 16, 17, 19, 13, 18]
-var pressure = [999, 1018, 1018, 1004, 1005, 1006, 1008, 1008, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1014, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1020]
-// Global Options:
-Chart.defaults.global.defaultFontColor = 'black';
-Chart.defaults.global.defaultFontSize = 16;
-
-var data = {
-  labels: time,
-  datasets: [{
-      label: "Temperature",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "red",
-      borderColor: "red", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "red",
-      pointHoverBorderColor: "red",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: temp,
-      spanGaps: true,
-    },
-    {
-      label: "Dew point",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "blue",
-      borderColor: "blue", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "blue",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: dewp ,
-      spanGaps: true,
-    },
-    {
-      label: "Humidity",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "orange",
-      borderColor: "orange", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "orange",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: humid ,
-      spanGaps: true,
-    },
-    {
-      label: "Wind Direction",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "black",
-      borderColor: "black", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "black",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: wind_dir ,
-      spanGaps: true,
-    },
-    {
-      label: "Wind Speed",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "green",
-      borderColor: "green", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "green",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: wind_speed ,
-      spanGaps: true,
-    },
-    {
-      label: "Pressure",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "gray",
-      borderColor: "gray", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "gray",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: pressure ,
-      spanGaps: true,
-    }
-
-
-  ]
-};
-
-// Notice the scaleLabel at the same level as Ticks
-var options = {
-  scales: {
-            yAxes: [{
-                scaleLabel: {
-                     display: true,
-                     fontSize: 15 
-                  }
-            }]            
-        }  
-};
-
-// Chart declaration:
-var myBarChart = new Chart(ctx, {
-  type: 'line',
-  data: data,
-  options: options
-});
-  </script>
   </body>
 </html>
