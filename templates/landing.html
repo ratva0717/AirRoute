@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>TIME SERIES ON WEATHER</title>
+    <title>LANDING ASSISTANCE</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
     <link rel="stylesheet" href="static/css/all.min.css" />
     <link rel="stylesheet" href="static/css/bootstrap.min.css" />
@@ -17,6 +17,52 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="static/js/index.js"></script>
+   <style>
+     
+.column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 800px) {
+    .column {
+        width: 150%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    text-align: center;
+    background-color: #ffffff;
+    column-gap: 70px;
+    margin: 0.6rem;
+    border: 3px solid #c5cdce;
+    left: 75%;
+}
+   </style>
   </head>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
@@ -72,13 +118,38 @@
               </footer>
             </div>
           </nav> 
+        
+<div class="tm-section-wrap bg-white">
+  <div class="tm-section-wrap bg-white tm-color-yellow">
+    <section id="eda" class="row tm-section">
+    <div class="row tm-clients-images">
+                <div class="col-xl-15 col-lg-15 col-md-15 col-sm-15 tm-img-wrap">
+                  
+                    <br>
+                    <h3 style="text-align:center;"> YOLOv5 Landing Assistant</h3>
+                     <h3 style="text-align:center;">The most important and most 
+                      terrifying part of a flight is landing.
+                      The world has seen many crashes that happened
+                      when the flight was a few minutes away from landing,
+                      many lives were lost in that. 
+                In order to make a small step towards reducing
+                      crashes we have designed an object detection
+                      model using YOLOv5 which will help the pilot see the runway
+                      clearly from a certain distance above the ground itself.
+                Here all we have to do is give the algorithm an image or video file,
+                      Go ahead and upload your files and see the magic </h3>
+                </div>
+          </div>
+        </div>
+      </div>
           <div class="tm-section-wrap bg-white">
             <section id="svm" class="row tm-section">
-                <div class="col-xl-8 mb-5">
+                <div class="col-xl-11 mb-5">
                   <div class="tm-contact-form-wrap">
                     <div class="App">
                       <header class="App-header">
-                        <p><u> Object Detection - YOLO </u></p>
+                        
+                        
                         <!-- <div className="pre_img">
                           <span><img id="imagebox" src="" /></span>
                         </div> -->
@@ -94,23 +165,23 @@
                             onchange="readUrl(this)"
                           />
                         </form>
-                        <button name="send" id="sendbutton">Send</button>
+                        <button name="send" id="sendbutton" >Send</button>
                       </header>
                     </div>
                   </div>
+                  <img id="target" align="center" src="static/img/test_1.jpeg" alt="Picture of 1" />
                   <br>
-                  {% if anchor%}
-                  <div >
-                  <img src ='runs/exp/test_1.png' width=200px, height=200px/>
-                  </div>
-                  {% endif %}
                 </div>
               </section>
           </div>
 
       </div>
     </div>
-  
+  <script>
+    document.getElementById('sendbutton').onclick = function () {
+      document.getElementById('target').classList.toggle('show');
+    }
+  </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.min.js"></script>

@@ -14,7 +14,7 @@ import configparser
 import time
 import json
 import logging
-
+import shutil
 
 app = Flask(__name__)
 
@@ -82,28 +82,21 @@ def landing():
 
 @app.route("/detect", methods=['POST'])
 def detect():
+    n = 1
     if not request.method == "POST":
         return
     video = request.files['video']
     print(uploads_dir)
     video.save(os.path.join(uploads_dir, secure_filename(video.filename)))
     print(video)
+    shutil.rmtree('runs\detect')
     subprocess.run(['python', 'detect.py', '--source', os.path.join(uploads_dir, secure_filename(video.filename))])
 
     # return os.path.join(uploads_dir, secure_filename(video.filename))
     obj = secure_filename(video.filename)
-    return obj
+    return_file()
+    return obj, n
 
-@app.route('/return-files', methods=['GET'])
-def return_file():
-    obj = request.args.get('obj')
-    loc = os.path.join("runs/detect", obj)
-    print(loc)
-    try:
-        return send_file(os.path.join("runs/detect", obj), attachment_filename=obj)
-        # return send_from_directory(loc, obj)
-    except Exception as e:
-        return str(e)
     
 @app.route("/Increment", methods=['POST'])
 def Increment():
@@ -136,6 +129,10 @@ def get_weather_data(zip_code, api_key):
             continue
     return r.json()
 
-
+def return_file():
+    src_path = r"runs\detect\exp\test_1.jpeg"
+    dst_path = r"static\img\test_1.jpeg"
+    shutil.move(src_path, dst_path)
+    
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=8000)

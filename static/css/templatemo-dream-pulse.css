@@ -543,8 +543,6 @@ a {
 
 .wrapper {
     height: 15vh;
-    /*This part is important for centering*/
-    display: flex;
     align-items: left;
     justify-content: left;
 }
@@ -558,6 +556,14 @@ a {
     font-family: monospace;
     font-size: 1em;
     color-adjust: blue;
+}
+
+#target {
+    display: none;
+}
+
+#target.show {
+    display: block;
 }
 
 @keyframes typing {
@@ -608,14 +614,15 @@ a {
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: rgb(0, 0, 0);
+    margin: -100px;
+    margin-left: 25%;
 }
 
 .App-link {
@@ -629,9 +636,9 @@ a {
 }
 
 input[type="file"] {
-    background-color: #4caf50;
+    background-color: #123f41;
     border: none;
-    color: white;
+    color: rgb(152, 199, 226);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -639,6 +646,7 @@ input[type="file"] {
     font-size: 16px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 40px 40px;
+    top: 50%;
     /* display: none; */
 }
 
@@ -646,7 +654,7 @@ input[type="file"] {
     background-color: #4caf50;
     /* Green */
     border: none;
-    color: white;
+    color: rgba(137, 212, 231, 0.315);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
