@@ -17,19 +17,24 @@
     <link rel="stylesheet" href="static/css/counter.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel = "icon" href = 
+    "https://previews.123rf.com/images/goodzone95/goodzone951704/goodzone95170400068/76185930-airplane-icon.jpg" 
+            type = "image/x-icon">
+            
   </head>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="static/js/main.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <body>
     <div id="container">
       <h2>Predicted Weather Factors In Hours</h2>
-      <h1 id="counterValue"  class="counterValue">0</h1>
       <div id="buttons">
-          <button style="margin:10px;" id="decrement" > - </button>
-          <button style="margin:10px;" id="increment" > + </button>
+          <button style="margin:1px;" class="container" id="decrement" > - </button>
+          <button style="margin:1px;" class="container" id="increment" > + </button>
       </div>
+      <h1 id="counterValue"  class="counterValue">0</h1>
   </div>
-</form>
-  <script>
+  <script type="text/javascript">
   let increment = document.querySelector("#increment");
     let decrement = document.querySelector("#decrement");
     let counterValue = document.querySelector("#counterValue");
@@ -39,37 +44,17 @@
     increment.addEventListener("click" , ()=>{
         counter++;
         counterValue.innerText = counter;
-        let temp_v = 40;
-        let dew_v = 15;
-        let humid_v = 19;
-        let ws_v = 28;
-        let wd_v = 25;
-        let pressure_v = 49;
-        temp.innerText = temp_v*(counter)+ (counter*counter*6);
-        dew.innerText = dew_v*(counter)+ (counter*counter*6);
-        humid.innerText = humid_v*(counter)+ (counter*counter*6);
-        ws.innerText = ws_v*(counter)+ (counter*counter*6);
-        wd.innerText = wd_v*(counter)+ (counter*counter*6);
-        pressure.innerText = pressure_v*(counter)+ (counter*counter*6);
-
+        update();
     })
     ;
     decrement.addEventListener("click" , ()=>{
         counter--;
         counterValue.innerText = counter;
-        let temp_v = 40;
-        let dew_v = 15;
-        let humid_v = 19;
-        let ws_v = 28;
-        let wd_v = 25;
-        let pressure_v = 45;
-        temp.innerText = temp_v*(counter)+ (counter*counter*6);
-        dew.innerText = dew_v*(counter)+ (counter*counter*6);
-        humid.innerText = humid_v*(counter)+ (counter*counter*6);
-        ws.innerText = ws_v*(counter)+ (counter*counter*6);
-        wd.innerText = wd_v*(counter)+ (counter*counter*6);
-        pressure.innerText = pressure_v*(counter)+ (counter*counter*6);
+        update();
     });
+    function update(){
+      var myvar = JSON.parse("s.json");
+  }
     </script>
   <div class="row">
       <div class="column">

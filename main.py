@@ -1,6 +1,6 @@
 from re import DEBUG, sub
-from flask import Flask, render_template, request, redirect, send_file, url_for
-from werkzeug.utils import secure_filename, send_from_directory
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
 import os
 import subprocess
 from scripts_driver.visualize import plot_wind, plot_temp, plot_pressure, plot_humidity
@@ -8,18 +8,15 @@ from scripts_driver.svm_model import *
 from scripts_driver.NB_model import *
 from scripts_driver.viz import *
 from scripts_driver.timeseries import predict
-import pickle
 import requests
 import configparser
 import time
 import json
-import logging
 import shutil
 
 app = Flask(__name__)
 
 uploads_dir = os.path.join(app.instance_path, 'uploads')
-logging.basicConfig(level=logging.DEBUG)
 
 @app.route('/')
 def index():
@@ -82,7 +79,6 @@ def landing():
 
 @app.route("/detect", methods=['POST'])
 def detect():
-    n = 1
     if not request.method == "POST":
         return
     video = request.files['video']
@@ -95,18 +91,30 @@ def detect():
     # return os.path.join(uploads_dir, secure_filename(video.filename))
     obj = secure_filename(video.filename)
     return_file()
-    return obj, n
+    return obj
 
     
 @app.route("/Increment", methods=['POST'])
 def Increment():
-    if not request.method == "POST":
-        return
-    val = request.args.get('new_data')
+    print("f")
+    val = request.form['new_data']
+    val = int(val)
     print(val)
-    val = 2
     temp, dew, humid, wd, ws, pressure  = predict(val)
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+    with open('data.txt','w') as f:
+        f.write(str(round(temp[-1],2)))
+        f.write('\n')
+        f.write(str(round(dew[-1],2)))
+        f.write('\n')
+        f.write(str(round(humid[-1],2)))
+        f.write('\n')
+        f.write(str(round(wd[-1],2)))
+        f.write('\n')
+        f.write(str(round(ws[-1],2)))
+        f.write('\n')
+        f.write(str(round(pressure[-1],2)))
+    print("loaded")
+    return "Success"
 
 def get_api_key():
     config = configparser.ConfigParser()
@@ -130,6 +138,10 @@ def get_weather_data(zip_code, api_key):
     return r.json()
 
 def return_file():
+    path = 'runs/detect/exp'
+    files  = os.listdir(path)
+    for index, file in enumerate(files):
+        os.rename(os.path.join(path, file), os.path.join(path, 'test_1.jpeg'))
     src_path = r"runs\detect\exp\test_1.jpeg"
     dst_path = r"static\img\test_1.jpeg"
     shutil.move(src_path, dst_path)

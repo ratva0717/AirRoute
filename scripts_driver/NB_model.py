@@ -28,6 +28,7 @@ def NB_predict(predict_list):
     # NB_Classifier()
     to_predict = np.array(predict_list).reshape(1,4)
     model = pickle.load(open('model_nb.pkl', 'rb'))
+    print(to_predict)
     y_pred = model.predict(to_predict)
     return y_pred
 
