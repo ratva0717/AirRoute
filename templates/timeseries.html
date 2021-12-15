@@ -53,7 +53,54 @@
         update();
     });
     function update(){
-      var myvar = JSON.parse("s.json");
+      if (counter == 1) {
+        document.getElementById("temp").innerHTML = 29.2;
+        document.getElementById("dew").innerHTML = 9.64;
+        document.getElementById("humid").innerHTML = 41.93;
+        document.getElementById("wd").innerHTML = 311.78;
+        document.getElementById("ws").innerHTML = 16.97;
+        document.getElementById("pressure").innerHTML = 1020;
+      }
+      else if (counter == 2) {
+        document.getElementById("temp").innerHTML = 29.83;
+        document.getElementById("dew").innerHTML = 9.42;
+        document.getElementById("humid").innerHTML = 42.06;
+        document.getElementById("wd").innerHTML = 292.79;
+        document.getElementById("ws").innerHTML = 16.17;
+        document.getElementById("pressure").innerHTML = 1020;
+      }
+      else if (counter == 3) {
+        document.getElementById("temp").innerHTML = 29.73;
+        document.getElementById("dew").innerHTML = 9.29;
+        document.getElementById("humid").innerHTML = 42.32;
+        document.getElementById("wd").innerHTML = 279.73;
+        document.getElementById("ws").innerHTML = 15.55;
+        document.getElementById("pressure").innerHTML = 1020;
+      }
+      else if (counter == 4) {
+        document.getElementById("temp").innerHTML = 29.2;
+        document.getElementById("dew").innerHTML = 9.64;
+        document.getElementById("humid").innerHTML = 41.93;
+        document.getElementById("wd").innerHTML = 311.78;
+        document.getElementById("ws").innerHTML = 16.97;
+        document.getElementById("pressure").innerHTML = 1020;
+      }
+      else if (counter == 0) {
+        document.getElementById("temp").innerHTML = 0;
+        document.getElementById("dew").innerHTML = 0;
+        document.getElementById("humid").innerHTML = 0;
+        document.getElementById("wd").innerHTML = 0;
+        document.getElementById("ws").innerHTML = 0;
+        document.getElementById("pressure").innerHTML = 0;
+      }
+      else {
+        document.getElementById("temp").innerHTML = 29.56;
+        document.getElementById("dew").innerHTML = 9.25;
+        document.getElementById("humid").innerHTML = 44.04;
+        document.getElementById("wd").innerHTML = 263.86;
+        document.getElementById("ws").innerHTML = 14.65;
+        document.getElementById("pressure").innerHTML = 1020;
+      }
   }
     </script>
   <div class="row">
