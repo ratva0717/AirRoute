@@ -146,5 +146,4 @@ def return_file():
     dst_path = r"static\img\test_1.jpeg"
     shutil.move(src_path, dst_path)
     
-if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=8000)
+
