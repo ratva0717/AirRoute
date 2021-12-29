@@ -11,7 +11,6 @@ from scripts_driver.timeseries import predict
 import requests
 import configparser
 import time
-import json
 import shutil
 
 app = Flask(__name__)

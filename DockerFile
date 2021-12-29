@@ -5,7 +5,8 @@ FROM centos:7
 COPY . ./app
 
 #Install python and other programs required to run our app
-RUN yum install -y python-pip python37u python37u-libs python37-devel python37u-pip uwsgi which gcc
+RUN yum install -y uwsgi which gcc
+RUN yum -y install python3 python3-devel
 
 #Change the working directory to /app
 WORKDIR /app/AirRoute
