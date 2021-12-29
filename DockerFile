@@ -8,7 +8,7 @@ COPY . ./app
 RUN yum install -y python-pip python37u python37u-libs python37-devel python37u-pip uwsgi which gcc
 
 #Change the working directory to /app
-WORKDIR /app
+WORKDIR /app/AirRoute
 
 #Changing the default python version from 2 to 3. We do this by first renaming the old python version and linking python filename to python3.6.
 RUN mv /usr/bin/python /usr/bin/python_old
